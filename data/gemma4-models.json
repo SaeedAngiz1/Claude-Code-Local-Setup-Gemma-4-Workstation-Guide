@@ -1,0 +1,49 @@
+[
+  {
+    "model": "E2B",
+    "best_fit": "edge/mobile/low-end machines",
+    "q4_estimated_vram_gb": "2-4",
+    "q8_status": "not sourced in this repository",
+    "bf16_fp16_calculated_weight_memory_gb": "about 4 before overhead",
+    "source_status": "model size sourced; VRAM recommendation estimated",
+    "sources": [
+      "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+      "https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/"
+    ]
+  },
+  {
+    "model": "E4B",
+    "best_fit": "laptop/dev daily driver",
+    "q4_estimated_vram_gb": "4-6",
+    "q8_status": "not sourced in this repository",
+    "bf16_fp16_calculated_weight_memory_gb": "about 8 before overhead",
+    "source_status": "model size sourced; VRAM recommendation estimated",
+    "sources": [
+      "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+      "https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/"
+    ]
+  },
+  {
+    "model": "26B A4B",
+    "best_fit": "stronger reasoning/coding on high-end consumer hardware",
+    "q4_estimated_vram_gb": "16-24",
+    "q8_status": "not sourced in this repository",
+    "bf16_fp16_calculated_weight_memory_gb": "about 52 before overhead",
+    "source_status": "model size sourced; VRAM recommendation estimated",
+    "sources": [
+      "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
+    ]
+  },
+  {
+    "model": "31B",
+    "best_fit": "best quality/workstation class",
+    "q4_estimated_vram_gb": "20-32",
+    "q8_status": "not sourced in this repository",
+    "bf16_fp16_calculated_weight_memory_gb": "about 62 before overhead",
+    "source_status": "model size sourced; VRAM recommendation estimated",
+    "sources": [
+      "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
+    ]
+  }
+]
+

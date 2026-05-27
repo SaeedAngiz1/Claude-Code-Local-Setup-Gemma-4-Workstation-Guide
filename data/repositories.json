@@ -1,0 +1,93 @@
+[
+  {
+    "repository": "anthropics/claude-plugins-official",
+    "category": "official plugin marketplace",
+    "install_method": "Claude Code plugin marketplace workflow",
+    "trust_level": "official",
+    "why_it_matters": "Anthropic-managed directory of Claude Code plugins.",
+    "source_link": "https://github.com/anthropics/claude-plugins-official",
+    "checked_at": "2026-05-27"
+  },
+  {
+    "repository": "subinium/awesome-claude-code",
+    "category": "awesome list",
+    "install_method": "manual review, then install linked resources",
+    "trust_level": "curated",
+    "why_it_matters": "Curated list of Claude Code tools, skills, plugins, and MCP servers.",
+    "source_link": "https://github.com/subinium/awesome-claude-code",
+    "checked_at": "2026-05-27"
+  },
+  {
+    "repository": "rohitg00/awesome-claude-code-toolkit",
+    "category": "toolkit index",
+    "install_method": "manual review, then copy or install selected assets",
+    "trust_level": "curated",
+    "why_it_matters": "Large catalog across agents, skills, commands, plugins, hooks, MCP configs, and ecosystem entries.",
+    "source_link": "https://github.com/rohitg00/awesome-claude-code-toolkit",
+    "checked_at": "2026-05-27"
+  },
+  {
+    "repository": "applied-artificial-intelligence/claude-code-toolkit",
+    "category": "workflow toolkit",
+    "install_method": "manual copy or adaptation",
+    "trust_level": "curated",
+    "why_it_matters": "Workflow patterns, skills, commands, and MCP integrations.",
+    "source_link": "https://github.com/applied-artificial-intelligence/claude-code-toolkit",
+    "checked_at": "2026-05-27"
+  },
+  {
+    "repository": "jeremylongshore/claude-code-plugins-plus-skills",
+    "category": "marketplace and skill catalog",
+    "install_method": "ccpi workflow or manual review",
+    "trust_level": "community",
+    "why_it_matters": "Large open-source marketplace for plugins, skills, and agents.",
+    "source_link": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills",
+    "checked_at": "2026-05-27"
+  },
+  {
+    "repository": "levnikolaevich/claude-code-skills",
+    "category": "plugin suite",
+    "install_method": "plugin or manual install after review",
+    "trust_level": "community",
+    "why_it_matters": "Delivery-lifecycle skills and bundled MCP servers.",
+    "source_link": "https://github.com/levnikolaevich/claude-code-skills",
+    "checked_at": "2026-05-27"
+  },
+  {
+    "repository": "serpro69/claude-toolbox",
+    "category": "config and plugin toolbox",
+    "install_method": "manual review and copy",
+    "trust_level": "community",
+    "why_it_matters": "Multi-language configs, plugins, MCPs, skills, and agents.",
+    "source_link": "https://github.com/serpro69/claude-toolbox",
+    "checked_at": "2026-05-27"
+  },
+  {
+    "repository": "rdmgator12/awesome-claude-plugins",
+    "category": "plugin directory",
+    "install_method": "manual review",
+    "trust_level": "community",
+    "why_it_matters": "Community-maintained directory of Claude plugin bundles.",
+    "source_link": "https://github.com/rdmgator12/awesome-claude-plugins",
+    "checked_at": "2026-05-27"
+  },
+  {
+    "repository": "shadowrootdev/awesome-agent-skills-mcp",
+    "category": "MCP skill server",
+    "install_method": "MCP server install after review",
+    "trust_level": "community",
+    "why_it_matters": "MCP server exposing agent skills for multiple MCP clients.",
+    "source_link": "https://github.com/shadowrootdev/awesome-agent-skills-mcp",
+    "checked_at": "2026-05-27"
+  },
+  {
+    "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "category": "UI/UX skill",
+    "install_method": "skill install after review",
+    "trust_level": "community",
+    "why_it_matters": "Design-intelligence skill for UI/UX work.",
+    "source_link": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "checked_at": "2026-05-27"
+  }
+]
+

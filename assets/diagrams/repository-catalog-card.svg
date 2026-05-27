@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">Repository catalog card</title>
+  <desc id="desc">A card summarizing official, curated, and community Claude Code resources.</desc>
+  <rect width="960" height="360" rx="18" fill="#0f1218"/>
+  <text x="44" y="62" fill="#eef3f7" font-family="Arial, sans-serif" font-size="30" font-weight="700">Claude Code resource catalog</text>
+  <g transform="translate(44 100)">
+    <rect width="260" height="184" rx="12" fill="#1b202a" stroke="#54d1a8"/>
+    <text x="22" y="42" fill="#54d1a8" font-family="Arial, sans-serif" font-size="22" font-weight="700">Official</text>
+    <text x="22" y="84" fill="#eef3f7" font-family="Arial, sans-serif" font-size="17">Anthropic plugin directory</text>
+    <text x="22" y="120" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="15">Install through reviewed</text>
+    <text x="22" y="144" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="15">marketplace workflows</text>
+  </g>
+  <g transform="translate(350 100)">
+    <rect width="260" height="184" rx="12" fill="#1b202a" stroke="#6ca6ff"/>
+    <text x="22" y="42" fill="#6ca6ff" font-family="Arial, sans-serif" font-size="22" font-weight="700">Curated</text>
+    <text x="22" y="84" fill="#eef3f7" font-family="Arial, sans-serif" font-size="17">Awesome lists + toolkits</text>
+    <text x="22" y="120" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="15">Use as discovery, then</text>
+    <text x="22" y="144" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="15">review before install</text>
+  </g>
+  <g transform="translate(656 100)">
+    <rect width="260" height="184" rx="12" fill="#1b202a" stroke="#ffd166"/>
+    <text x="22" y="42" fill="#ffd166" font-family="Arial, sans-serif" font-size="22" font-weight="700">Community</text>
+    <text x="22" y="84" fill="#eef3f7" font-family="Arial, sans-serif" font-size="17">Skills, MCPs, agents</text>
+    <text x="22" y="120" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="15">Check source, hooks,</text>
+    <text x="22" y="144" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="15">licenses, and secrets</text>
+  </g>
+</svg>
+

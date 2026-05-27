@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">Gemma 4 hardware selection diagram</title>
+  <desc id="desc">A hardware-to-model selection diagram for Gemma 4 E2B, E4B, 26B A4B, and 31B.</desc>
+  <rect width="960" height="430" rx="18" fill="#0f1218"/>
+  <text x="42" y="58" fill="#eef3f7" font-family="Arial, sans-serif" font-size="30" font-weight="700">Gemma 4 hardware selection</text>
+  <line x1="92" y1="210" x2="868" y2="210" stroke="#3a4656" stroke-width="6" stroke-linecap="round"/>
+  <g transform="translate(52 128)">
+    <circle cx="40" cy="82" r="32" fill="#54d1a8"/>
+    <text x="20" y="90" fill="#0f1218" font-family="Arial, sans-serif" font-size="22" font-weight="700">E2</text>
+    <text x="0" y="150" fill="#eef3f7" font-family="Arial, sans-serif" font-size="18">Edge / mobile</text>
+    <text x="0" y="178" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="15">2-4 GB Q4 est.</text>
+  </g>
+  <g transform="translate(288 128)">
+    <circle cx="40" cy="82" r="32" fill="#6ca6ff"/>
+    <text x="20" y="90" fill="#0f1218" font-family="Arial, sans-serif" font-size="22" font-weight="700">E4</text>
+    <text x="-10" y="150" fill="#eef3f7" font-family="Arial, sans-serif" font-size="18">Developer laptop</text>
+    <text x="-10" y="178" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="15">4-6 GB Q4 est.</text>
+  </g>
+  <g transform="translate(526 128)">
+    <circle cx="40" cy="82" r="32" fill="#ffd166"/>
+    <text x="10" y="90" fill="#0f1218" font-family="Arial, sans-serif" font-size="20" font-weight="700">26B</text>
+    <text x="-28" y="150" fill="#eef3f7" font-family="Arial, sans-serif" font-size="18">High-end GPU</text>
+    <text x="-28" y="178" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="15">16-24 GB Q4 est.</text>
+  </g>
+  <g transform="translate(762 128)">
+    <circle cx="40" cy="82" r="32" fill="#f78c6c"/>
+    <text x="14" y="90" fill="#0f1218" font-family="Arial, sans-serif" font-size="20" font-weight="700">31B</text>
+    <text x="-18" y="150" fill="#eef3f7" font-family="Arial, sans-serif" font-size="18">Workstation</text>
+    <text x="-18" y="178" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="15">20-32 GB Q4 est.</text>
+  </g>
+  <text x="42" y="376" fill="#9aa6b4" font-family="Arial, sans-serif" font-size="16">Estimates vary with context length, KV cache, runtime, driver overhead, batch size, and quantization format.</text>
+</svg>
+

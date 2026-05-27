@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Claude Code installation docs",
+    "url": "https://code.claude.com/docs/en/installation",
+    "category": "official"
+  },
+  {
+    "name": "Claude Code MCP docs",
+    "url": "https://code.claude.com/docs/en/mcp",
+    "category": "official"
+  },
+  {
+    "name": "Claude Code skills docs",
+    "url": "https://code.claude.com/docs/en/skills",
+    "category": "official"
+  },
+  {
+    "name": "Claude Code plugins docs",
+    "url": "https://code.claude.com/docs/en/plugins",
+    "category": "official"
+  },
+  {
+    "name": "Claude Code settings docs",
+    "url": "https://code.claude.com/docs/en/settings",
+    "category": "official"
+  },
+  {
+    "name": "Claude Code environment variables",
+    "url": "https://code.claude.com/docs/en/env-vars",
+    "category": "official"
+  },
+  {
+    "name": "Official Claude plugins marketplace repo",
+    "url": "https://github.com/anthropics/claude-plugins-official",
+    "category": "official"
+  },
+  {
+    "name": "Google Gemma 4 announcement",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+    "category": "official"
+  },
+  {
+    "name": "Google Developers Gemma 4 edge post",
+    "url": "https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/",
+    "category": "official"
+  }
+]
+
