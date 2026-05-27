@@ -12,6 +12,7 @@
 
 - نصب محلی Claude Code روی Windows، macOS، Linux و WSL. منبع: [Claude Code installation](https://code.claude.com/docs/en/installation)
 - تنظیم، بررسی، حذف و چرخش کلید API برای استفاده محلی. منبع: [Claude Code environment variables](https://code.claude.com/docs/en/env-vars)
+- جایگزین کردن backend برای Claude Code: استفاده مستقیم از LM Studio، استفاده مستقیم از OpenRouter با محدودیت‌ها، و استفاده از GPT/Gemini/RouteLLM/NVIDIA از طریق gateway سازگار با Anthropic. جزئیات: [docs/provider-routing.md](docs/provider-routing.md)
 - پیکربندی پروژه با `CLAUDE.md`، مسیر `.claude/skills/<skill>/SKILL.md`، فایل `.mcp.json`، فایل `.claude/settings.local.json` و پلاگین‌ها. منابع: [skills](https://code.claude.com/docs/en/skills)، [MCP](https://code.claude.com/docs/en/mcp)، [plugins](https://code.claude.com/docs/en/plugins)، [settings](https://code.claude.com/docs/en/settings)
 - مثال‌های MCP برای GitHub، فایل‌سیستم، مرورگر، Postgres و جستجوی مستندات.
 - راهنمای انتخاب Gemma 4 با تفکیک واضح بین اطلاعات منبع‌دار، محاسبه‌شده و تخمینی. منابع: [Google Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) و [Google Developers edge post](https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/)
@@ -147,6 +148,39 @@ unset ANTHROPIC_API_KEY
 ```
 
 اگر کلید به‌اشتباه commit شد، فوراً آن را revoke/rotate کنید و diff یا تاریخچه Git را پاک‌سازی کنید. منابع: [GitHub secret scanning](https://docs.github.com/code-security/secret-scanning/about-secret-scanning)، [removing sensitive data](https://docs.github.com/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
+
+## جایگزین کردن backend Claude Code با LM Studio، GPT، Gemini، RouteLLM یا NVIDIA
+
+Claude Code می‌تواند به endpoint دیگری route شود، اما آن endpoint باید فرمتی را پشتیبانی کند که Claude Code می‌فهمد. LM Studio برای Claude Code یک endpoint سازگار با Anthropic به شکل `POST /v1/messages` مستند کرده است. GPT/OpenAI، Gemini OpenAI Compatibility، NVIDIA NIM و بسیاری از routerها معمولاً OpenAI-compatible هستند (`/v1/chat/completions`) و برای Claude Code به یک gateway سازگار با Anthropic نیاز دارند.
+
+راهنمای کامل مرحله‌به‌مرحله: [docs/provider-routing.md](docs/provider-routing.md)
+
+LM Studio محلی:
+
+```bash
+lms server start --port 1234
+export ANTHROPIC_BASE_URL="http://localhost:1234"
+export ANTHROPIC_AUTH_TOKEN="lmstudio"
+export ANTHROPIC_API_KEY=""
+claude --model your_lm_studio_model_id_here
+```
+
+الگوی gateway عمومی:
+
+```bash
+export ANTHROPIC_BASE_URL="http://localhost:4000"
+export ANTHROPIC_AUTH_TOKEN="your_gateway_token_here"
+export ANTHROPIC_API_KEY=""
+export ANTHROPIC_MODEL="your_gateway_model_id_here"
+claude
+```
+
+بررسی:
+
+```txt
+/status
+/model
+```
 
 ## پیکربندی Claude Code
 

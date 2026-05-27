@@ -30,6 +30,16 @@
     "category": "official"
   },
   {
+    "name": "Claude Code LLM gateway configuration",
+    "url": "https://code.claude.com/docs/en/llm-gateway",
+    "category": "official"
+  },
+  {
+    "name": "Claude Code model configuration",
+    "url": "https://code.claude.com/docs/en/model-config",
+    "category": "official"
+  },
+  {
     "name": "Official Claude plugins marketplace repo",
     "url": "https://github.com/anthropics/claude-plugins-official",
     "category": "official"
@@ -43,6 +53,45 @@
     "name": "Google Developers Gemma 4 edge post",
     "url": "https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/",
     "category": "official"
+  },
+  {
+    "name": "LM Studio Claude Code integration",
+    "url": "https://lmstudio.ai/docs/integrations/claude-code",
+    "category": "official"
+  },
+  {
+    "name": "LM Studio Anthropic compatibility",
+    "url": "https://lmstudio.ai/docs/developer/anthropic-compat",
+    "category": "official"
+  },
+  {
+    "name": "OpenRouter Claude Code integration",
+    "url": "https://openrouter.ai/docs/cookbook/coding-agents/claude-code-integration",
+    "category": "provider"
+  },
+  {
+    "name": "OpenAI Chat Completions API reference",
+    "url": "https://platform.openai.com/docs/api-reference/chat/create-chat-completion",
+    "category": "official"
+  },
+  {
+    "name": "Gemini OpenAI compatibility",
+    "url": "https://ai.google.dev/gemini-api/docs/openai",
+    "category": "official"
+  },
+  {
+    "name": "NVIDIA NIM LLM API reference",
+    "url": "https://docs.nvidia.com/nim/large-language-models/1.12.0/api-reference.html",
+    "category": "official"
+  },
+  {
+    "name": "Abacus RouteLLM API reference",
+    "url": "https://abacus.ai/help/developer-platform/route-llm",
+    "category": "provider"
+  },
+  {
+    "name": "rout.my documentation",
+    "url": "https://docs.rout.my/",
+    "category": "provider"
   }
 ]
-

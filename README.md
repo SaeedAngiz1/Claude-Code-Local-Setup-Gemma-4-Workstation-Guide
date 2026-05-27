@@ -12,6 +12,7 @@ A publish-ready workstation guide for installing Claude Code locally, wiring ski
 
 - Local Claude Code installation for Windows, macOS, Linux, and WSL using the official installation guidance from Anthropic. Source: [Claude Code installation docs](https://code.claude.com/docs/en/installation)
 - Claude Code API-key configuration with placeholder-only examples and local secret hygiene. Source: [Claude Code environment variables](https://code.claude.com/docs/en/env-vars)
+- Claude Code backend replacement/routing for LM Studio, OpenRouter, GPT/OpenAI, Gemini, RouteLLM/rout.my, NVIDIA NIM, and other providers through Anthropic-compatible gateways. Sources: [Claude Code LLM gateway docs](https://code.claude.com/docs/en/llm-gateway), [LM Studio Claude Code integration](https://lmstudio.ai/docs/integrations/claude-code), [OpenRouter Claude Code integration](https://openrouter.ai/docs/cookbook/coding-agents/claude-code-integration)
 - Claude Code project configuration through `CLAUDE.md`, `.claude/skills/<skill>/SKILL.md`, `.mcp.json`, settings files, and plugin marketplace flows. Sources: [skills](https://code.claude.com/docs/en/skills), [MCP](https://code.claude.com/docs/en/mcp), [plugins](https://code.claude.com/docs/en/plugins), [settings](https://code.claude.com/docs/en/settings)
 - MCP examples for GitHub, filesystem, browser automation, Postgres, and documentation/search. Source: [Claude Code MCP docs](https://code.claude.com/docs/en/mcp)
 - A curated repository catalog for skills, plugins, agents, hooks, and marketplaces, separated by official, curated, and community trust levels.
@@ -191,6 +192,52 @@ unset ANTHROPIC_API_KEY
 ```
 
 For rotation, create a new key in the provider console, update your local environment, restart the terminal, verify the variable exists without printing it, and revoke the old key. Sources: [Anthropic console](https://console.anthropic.com/), [Claude Code environment variables](https://code.claude.com/docs/en/env-vars), and [GitHub secret scanning docs](https://docs.github.com/code-security/secret-scanning/about-secret-scanning)
+
+## Replacing Claude Code's Backend with LM Studio, GPT, Gemini, RouteLLM, or NVIDIA
+
+Claude Code can be routed away from Anthropic's default API endpoint, but the replacement endpoint must speak a protocol Claude Code understands. The most important practical distinction is:
+
+- LM Studio can work directly because it documents an Anthropic-compatible `POST /v1/messages` endpoint for Claude Code. Source: [LM Studio Claude Code integration](https://lmstudio.ai/docs/integrations/claude-code)
+- OpenRouter can work directly through its Anthropic-compatible Claude Code integration, but OpenRouter says Claude Code is only guaranteed with the Anthropic first-party provider. Source: [OpenRouter Claude Code integration](https://openrouter.ai/docs/cookbook/coding-agents/claude-code-integration)
+- GPT/OpenAI, Gemini OpenAI compatibility, NVIDIA NIM, Abacus RouteLLM, and many router APIs are usually OpenAI-compatible `/v1/chat/completions` providers. Claude Code does not call those directly unless a provider also exposes Anthropic-compatible `/v1/messages`; use a gateway/proxy that translates Anthropic Messages to the upstream API. Sources: [Claude Code LLM gateway docs](https://code.claude.com/docs/en/llm-gateway), [OpenAI Chat Completions](https://platform.openai.com/docs/api-reference/chat/create-chat-completion), [Gemini OpenAI compatibility](https://ai.google.dev/gemini-api/docs/openai), [NVIDIA NIM API reference](https://docs.nvidia.com/nim/large-language-models/1.12.0/api-reference.html), [RouteLLM docs](https://abacus.ai/help/developer-platform/route-llm)
+
+Full step-by-step guide: [docs/provider-routing.md](docs/provider-routing.md)
+
+Quick LM Studio local replacement:
+
+```bash
+lms server start --port 1234
+export ANTHROPIC_BASE_URL="http://localhost:1234"
+export ANTHROPIC_AUTH_TOKEN="lmstudio"
+export ANTHROPIC_API_KEY=""
+claude --model your_lm_studio_model_id_here
+```
+
+Windows PowerShell:
+
+```powershell
+$env:ANTHROPIC_BASE_URL="http://localhost:1234"
+$env:ANTHROPIC_AUTH_TOKEN="lmstudio"
+$env:ANTHROPIC_API_KEY=""
+claude --model your_lm_studio_model_id_here
+```
+
+Quick generic gateway pattern:
+
+```bash
+export ANTHROPIC_BASE_URL="http://localhost:4000"
+export ANTHROPIC_AUTH_TOKEN="your_gateway_token_here"
+export ANTHROPIC_API_KEY=""
+export ANTHROPIC_MODEL="your_gateway_model_id_here"
+claude
+```
+
+Verify inside Claude Code:
+
+```txt
+/status
+/model
+```
 
 ## Claude Code Configuration
 

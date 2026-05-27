@@ -12,6 +12,7 @@ Ein produktionsreifes GitHub-Handbuch fuer die lokale Installation von Claude Co
 
 - Claude Code lokal installieren: Windows, macOS, Linux und WSL. Quelle: [Claude Code Installation](https://code.claude.com/docs/en/installation)
 - API-Key lokal setzen, pruefen, entfernen und rotieren. Quelle: [Claude Code Environment Variables](https://code.claude.com/docs/en/env-vars)
+- Claude-Code-Backend ersetzen: LM Studio direkt, OpenRouter direkt mit Einschraenkungen, und GPT/Gemini/RouteLLM/NVIDIA ueber ein Anthropic-kompatibles Gateway. Details: [docs/provider-routing.md](docs/provider-routing.md)
 - Projektkonfiguration mit `CLAUDE.md`, `.claude/skills/<skill>/SKILL.md`, `.mcp.json`, `.claude/settings.local.json` und Plugins. Quellen: [Skills](https://code.claude.com/docs/en/skills), [MCP](https://code.claude.com/docs/en/mcp), [Plugins](https://code.claude.com/docs/en/plugins), [Settings](https://code.claude.com/docs/en/settings)
 - MCP-Beispiele fuer GitHub, Dateisystem, Browser, Postgres und Docs/Search.
 - Gemma-4-Modellwahl mit klar getrennten Quellenangaben, Berechnungen und Schaetzungen. Quellen: [Google Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) und [Google Developers Edge Post](https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/)
@@ -147,6 +148,39 @@ unset ANTHROPIC_API_KEY
 ```
 
 Wenn ein Key versehentlich committed wurde: Key sofort widerrufen, neuen Key setzen und Git-History/PR-Diff bereinigen. Quellen: [GitHub Secret Scanning](https://docs.github.com/code-security/secret-scanning/about-secret-scanning), [Removing sensitive data](https://docs.github.com/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
+
+## Claude-Code-Backend durch LM Studio, GPT, Gemini, RouteLLM oder NVIDIA ersetzen
+
+Claude Code kann auf einen anderen Endpoint zeigen, aber dieser Endpoint muss ein Format sprechen, das Claude Code versteht. LM Studio dokumentiert dafuer direkt einen Anthropic-kompatiblen `POST /v1/messages` Endpoint. GPT/OpenAI, Gemini OpenAI Compatibility, NVIDIA NIM und viele Router sind meistens OpenAI-kompatibel (`/v1/chat/completions`) und brauchen deshalb ein Anthropic-kompatibles Gateway dazwischen.
+
+Vollstaendige Schritt-fuer-Schritt-Anleitung: [docs/provider-routing.md](docs/provider-routing.md)
+
+LM Studio lokal:
+
+```bash
+lms server start --port 1234
+export ANTHROPIC_BASE_URL="http://localhost:1234"
+export ANTHROPIC_AUTH_TOKEN="lmstudio"
+export ANTHROPIC_API_KEY=""
+claude --model your_lm_studio_model_id_here
+```
+
+Generic Gateway:
+
+```bash
+export ANTHROPIC_BASE_URL="http://localhost:4000"
+export ANTHROPIC_AUTH_TOKEN="your_gateway_token_here"
+export ANTHROPIC_API_KEY=""
+export ANTHROPIC_MODEL="your_gateway_model_id_here"
+claude
+```
+
+Pruefen:
+
+```txt
+/status
+/model
+```
 
 ## Claude-Code-Konfiguration
 
