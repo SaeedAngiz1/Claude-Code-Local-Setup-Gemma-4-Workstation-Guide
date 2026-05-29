@@ -358,3 +358,152 @@ $env:GROQ_API_KEY="کلید_groq_خودت_اینجا"
 $env:OPENROUTER_API_KEY="کلید_openrouter_خودت_اینجا"
 ```
 
+---
+
+## Switching the Claude Code Backend from Anthropic to Google Gemini
+
+To swap out the backend provider from Anthropic to Google Gemini using either PowerShell or standard Command Prompt (CMD), you need to configure specific environment variables that tell the CLI tool to route requests to Google's API endpoint instead of Anthropic's.
+
+Depending on which terminal interface you are currently using, choose the corresponding steps below.
+
+### Option 1: Using PowerShell
+
+Paste these commands directly into your PowerShell prompt. Replace `AIzaSyYourActualKeyHere` with your actual Gemini API key.
+
+```powershell
+# 1. Provide your Gemini API key
+$env:GEMINI_API_KEY="AIzaSyYourActualKeyHere"
+
+# 2. Redirect the tool's API URL to Google's OpenAI-compatible endpoint
+$env:CLAUDE_CODE_API_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
+
+# 3. Specify the Gemini model you want to execute, for example gemini-2.5-pro or gemini-2.5-flash
+$env:CLAUDE_CODE_MODEL="gemini-2.5-pro"
+
+# 4. Start the application
+claude
+```
+
+### Option 2: Using Command Prompt (CMD)
+
+If you prefer standard Windows CMD, the syntax uses `set` instead of `$env:`. Paste these lines into your CMD window.
+
+```cmd
+:: 1. Provide your Gemini API key
+set GEMINI_API_KEY=AIzaSyYourActualKeyHere
+
+:: 2. Redirect the tool's API URL to Google's endpoint
+set CLAUDE_CODE_API_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+
+:: 3. Specify the Gemini model
+set CLAUDE_CODE_MODEL=gemini-2.5-pro
+
+:: 4. Start the application
+claude
+```
+
+### Why this works
+
+Google's Gemini API exposes an OpenAI-compatible routing path at `/v1beta/openai/`. By telling the `claude` CLI tool to send its requests to that custom URL while passing your `GEMINI_API_KEY`, the tool routes requests to Google's models instead of the default Anthropic endpoint.
+
+> Note: Environment variables set this way only last as long as that specific PowerShell or CMD window is open. If you close the terminal, you will need to paste those lines in again next time you launch it.
+
+---
+
+## Claude Code Backend von Anthropic zu Google Gemini wechseln
+
+Um den Backend-Provider von Anthropic zu Google Gemini zu wechseln, kannst du entweder PowerShell oder die klassische Windows-Eingabeaufforderung (CMD) verwenden. Dafür setzt du bestimmte Environment Variables, damit das CLI-Tool Anfragen an Googles API-Endpunkt statt an Anthropic sendet.
+
+Wähle je nach Terminal die passende Option.
+
+### Option 1: PowerShell
+
+Füge diese Befehle direkt in PowerShell ein. Ersetze `AIzaSyYourActualKeyHere` durch deinen echten Gemini API Key.
+
+```powershell
+# 1. Gemini API Key setzen
+$env:GEMINI_API_KEY="AIzaSyYourActualKeyHere"
+
+# 2. API-URL auf Googles OpenAI-kompatiblen Endpunkt umleiten
+$env:CLAUDE_CODE_API_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
+
+# 3. Gemini-Modell auswählen, zum Beispiel gemini-2.5-pro oder gemini-2.5-flash
+$env:CLAUDE_CODE_MODEL="gemini-2.5-pro"
+
+# 4. Anwendung starten
+claude
+```
+
+### Option 2: Command Prompt (CMD)
+
+Wenn du die normale Windows-Eingabeaufforderung verwendest, nutzt du `set` statt `$env:`.
+
+```cmd
+:: 1. Gemini API Key setzen
+set GEMINI_API_KEY=AIzaSyYourActualKeyHere
+
+:: 2. API-URL auf Googles Endpunkt umleiten
+set CLAUDE_CODE_API_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+
+:: 3. Gemini-Modell auswählen
+set CLAUDE_CODE_MODEL=gemini-2.5-pro
+
+:: 4. Anwendung starten
+claude
+```
+
+### Warum das funktioniert
+
+Die Gemini API von Google bietet einen OpenAI-kompatiblen Routing-Pfad unter `/v1beta/openai/`. Wenn du dem `claude` CLI-Tool diese benutzerdefinierte URL und deinen `GEMINI_API_KEY` gibst, werden die Anfragen an Googles Modelle statt an den Standard-Anthropic-Endpunkt gesendet.
+
+> Hinweis: So gesetzte Environment Variables gelten nur für das aktuelle PowerShell- oder CMD-Fenster. Wenn du das Terminal schließt, musst du die Befehle beim nächsten Start erneut einfügen.
+
+---
+
+## تغییر Backend در Claude Code از Anthropic به Google Gemini
+
+برای تغییر Backend Provider از Anthropic به Google Gemini می‌توانی از PowerShell یا Command Prompt معمولی ویندوز (CMD) استفاده کنی. باید چند Environment Variable تنظیم کنی تا ابزار CLI درخواست‌ها را به API گوگل بفرستد، نه به endpoint پیش‌فرض Anthropic.
+
+بسته به ترمینالی که استفاده می‌کنی، یکی از گزینه‌های زیر را انتخاب کن.
+
+### گزینه 1: استفاده از PowerShell
+
+این دستورها را مستقیم داخل PowerShell قرار بده. مقدار `AIzaSyYourActualKeyHere` را با Gemini API Key واقعی خودت عوض کن.
+
+```powershell
+# 1. تنظیم Gemini API Key
+$env:GEMINI_API_KEY="AIzaSyYourActualKeyHere"
+
+# 2. تغییر API URL به endpoint سازگار با OpenAI در Google
+$env:CLAUDE_CODE_API_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
+
+# 3. انتخاب مدل Gemini، مثلا gemini-2.5-pro یا gemini-2.5-flash
+$env:CLAUDE_CODE_MODEL="gemini-2.5-pro"
+
+# 4. اجرای برنامه
+claude
+```
+
+### گزینه 2: استفاده از Command Prompt (CMD)
+
+اگر از CMD معمولی ویندوز استفاده می‌کنی، به جای `$env:` باید از `set` استفاده کنی.
+
+```cmd
+:: 1. تنظیم Gemini API Key
+set GEMINI_API_KEY=AIzaSyYourActualKeyHere
+
+:: 2. تغییر API URL به endpoint گوگل
+set CLAUDE_CODE_API_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+
+:: 3. انتخاب مدل Gemini
+set CLAUDE_CODE_MODEL=gemini-2.5-pro
+
+:: 4. اجرای برنامه
+claude
+```
+
+### چرا این روش کار می‌کند
+
+Gemini API گوگل یک مسیر سازگار با OpenAI در `/v1beta/openai/` ارائه می‌دهد. وقتی به ابزار CLI به نام `claude` این URL سفارشی و مقدار `GEMINI_API_KEY` را می‌دهی، درخواست‌ها به مدل‌های گوگل ارسال می‌شوند، نه به endpoint پیش‌فرض Anthropic.
+
+> نکته: Environment Variable هایی که با این روش تنظیم می‌شوند فقط تا وقتی فعال هستند که همان پنجره PowerShell یا CMD باز باشد. اگر ترمینال را ببندی، دفعه بعد باید دوباره این دستورها را وارد کنی.
