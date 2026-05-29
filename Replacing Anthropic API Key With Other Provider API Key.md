@@ -1,6 +1,7 @@
-# Using Gemini or Other Provider API Keys in Cloud Code with Python
+# 1. Using Gemini or Other Provider API Keys in Cloud Code with Python
+# 2. Switching the Claude Code Backend from Anthropic to Google Gemini
 
-This guide explains how to use a Gemini API key, or another provider API key, in Cloud Code with Python by storing the key in an environment variable instead of hardcoding it in your source code.
+1.This guide explains how to use a Gemini API key, or another provider API key, in Cloud Code with Python by storing the key in an environment variable instead of hardcoding it in your source code.
 
 > Keep API keys out of your code files. Read them from environment variables at runtime.
 
@@ -360,7 +361,7 @@ $env:OPENROUTER_API_KEY="کلید_openrouter_خودت_اینجا"
 
 ---
 
-## Switching the Claude Code Backend from Anthropic to Google Gemini
+##2. Switching the Claude Code Backend from Anthropic to Google Gemini
 
 To swap out the backend provider from Anthropic to Google Gemini using either PowerShell or standard Command Prompt (CMD), you need to configure specific environment variables that tell the CLI tool to route requests to Google's API endpoint instead of Anthropic's.
 
