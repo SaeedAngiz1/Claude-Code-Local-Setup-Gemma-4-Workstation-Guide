@@ -1,4 +1,4 @@
-# Claude Code Local Setup + Gemma 4 Workstation Guide
+# Claude Code Local Setup + Gemma 4 Workstation Guide + Claude Code Skills : https://www.skills.sh
 
 A publish-ready workstation guide for installing Claude Code locally, wiring skills/plugins/MCPs safely, configuring local API keys, and choosing a Gemma 4 model for your hardware.
 
